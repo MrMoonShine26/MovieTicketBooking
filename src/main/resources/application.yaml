@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: dev
+  jpa:
+    open-in-view: true
+    properties:
+      hibernate:
+        search:
+          backend:
+            type: lucene
+            directory.root: ./search/index
+            analysis:
+              configurer: com.xyz.configuration.MyLuceneAnalysisConfigurer
+  logging:
+    level:
+      root: info
+      org.springframework.web: info
+      org.hibernate: error

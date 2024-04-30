@@ -1,0 +1,26 @@
+spring:
+#  profile: dev
+  datasource:
+    url: jdbc:h2:file:./movieticket
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+    initialization-mode: never
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
+      settings.trace: false
+      settings.web-allow-others: false
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      format-sql: true
+logging:
+  level:
+    root: info
+    org.springframework.web: info
+    org.hibernate: error
